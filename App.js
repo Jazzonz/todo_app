@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import {Button, Avatar} from 'react-native-elements';
 import Header from './Components/header';
+import {createStackNavigator, createAppContainer} from 'react-navigation'
+import Todo from './Screen/Todo';
 
 export default class App extends React.Component {
   render() {
@@ -20,10 +22,21 @@ export default class App extends React.Component {
   onPress={() => console.log("Works!")}
   activeOpacity={0.7}
 />
+title= "Go to Todo"
+onPress={() => this.props.navigation.navigate('TodoScreen')}
       </View>
     );
   }
 }
+
+const AppNavigator = createStackNavigator({
+  Home: {
+    screen: App,
+    TodoScreen: Todo,
+  }
+});
+
+const AppContainer = createAppContainer(AppNavigator);
 
 const styles = StyleSheet.create({
   container: {
@@ -37,3 +50,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   }
 });
+export default AppNavigator
+export default AppContainer
