@@ -1,10 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import {Button, Avatar} from 'react-native-elements'
+import {Button, Avatar} from 'react-native-elements';
+import Header from './Components/header';
+
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
+      <Header textIwant={"hello"} />
       <Button title={"HI"} 
       onPress={()=>{ console.log('hello'); }}
       color="#deb887"
@@ -13,10 +16,8 @@ export default class App extends React.Component {
         <Avatar
   size="large"
   rounded
-  icon={{name: 'meetup', color: 'red', type: 'font-awesome'}}
   onPress={() => console.log("Works!")}
   activeOpacity={0.7}
-  containerStyle={{flex: 2, marginLeft: 20, marginTop: 50}}
 />
       </View>
     );
