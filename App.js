@@ -8,6 +8,7 @@ export default class App extends React.Component {
     return (
       <View style={styles.container}>
       <Header textIwant={"hello"} />
+      <Header textIwant={"hello2"} />
       <Button title={"HI"} 
       onPress={()=>{ console.log('hello'); }}
       color="#deb887"
